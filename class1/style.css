@@ -1,0 +1,40 @@
+html {
+    background-image: url('./StEdsToppers.png');
+    background-repeat: repeat-y;
+}
+
+body {
+    margin-left: 191px;
+}
+
+h1, h3 {
+    color: blue;
+}
+
+p {
+    text-align: center;
+}
+
+#paragraph2 {
+    background-color: antiquewhite;
+    color: aqua;
+}
+#paragraph3 {
+    color: orange;
+}
+
+#paragraph4 {
+    background-color: hotpink;
+    color: paleturquoise;
+}
+
+.classOne {
+    text-align: center;
+    color: blue;
+    font-size: 30px;
+}
+
+.classTwo {
+    text-align: right;
+    background-color: green;
+}

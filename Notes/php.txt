@@ -1,0 +1,68 @@
+PHP: Hypertext Processor
+
+
+PHP is a server side scripting language.
+One way that allows us to make a dynamic webpage.
+
+PHP scripts first run on server, then send data for the browser to parse.
+
+PHP files require a PHP server to run.
+
+What can be in a PHP File:
+    Text
+    HTML
+    CSS
+    JavaScript
+    PHP
+
+
+Encapsulate inside the PHP tag.
+
+<?PHP
+    MY CODE
+?>
+
+All PHP lines end in a ';'
+
+PHP and HTML can coexist in the same file.
+Encapsulated inside an html file, but ends with *.PHP
+
+Comments:
+    // or #
+    /* */
+
+Variables:
+    $var = VALUE
+
+    Untyped
+    Must start with a letter or _
+    Case sensitive
+
+    Global:
+        Outside scope of function.
+        Need a global keyword to access inside a function.
+
+    Local:
+        Only exist inside that function.
+    Static:
+        A local variable that preserves accross multiple iterations.
+    
+
+    String, int, double, boolean, arrays
+    Array(...)
+    $var = new VariableObject()
+
+    var_dump($var)
+        Dumps the variable, and type.
+
+
+Math:
+    +,-,*,/,%,**(Exponent)
+    +=, -=, *=, /=, %=, ++, --
+    ==, <, <=, >=, !=, === (equivalent and same type)
+
+
+Flow Control:
+    If/Else If/ Else
+    While, For
+    Switch

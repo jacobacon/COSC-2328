@@ -1,0 +1,13 @@
+body {
+    color: Gray;
+    background-color: aliceblue;
+}
+
+#content h1{
+    text-align: center;
+}
+
+#images{
+    display: flex;
+    margin-top: 15px;
+}
