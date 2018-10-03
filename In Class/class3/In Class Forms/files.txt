@@ -1,0 +1,33 @@
+local reading and writing.
+
+fopen($filename, {r,w,r+,w+, a})
+
+
+
+uploading files:
+    Use a form, with input type of file
+    enctype="multipart/form-data"
+        lets server know files may be included.
+    stored in $_FILES
+        name, type, tmpname, error, size
+
+    pathinfo() function
+        PATHINFO_EXTENSION
+        BASENAME
+        DIRNAME
+        FILENAME
+
+explode()
+    breaks a string apart into and array based on a delimiter
+
+    end($array) gives last entry in an array
+
+
+getimagesize($image)
+    returns basic info about an image:
+        height/width
+
+move_uploaded_file($tmpfile, $filename):
+    folder must exist before moving.
+    mkdir()
+    
