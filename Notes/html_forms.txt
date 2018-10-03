@@ -1,0 +1,124 @@
+Collect Data from the user.
+
+Any kind of data, or restricted data.
+
+Server side parsing
+
+Processed by a script on the backend.
+
+<form action="exaple.php" method="POST">
+    ...
+</form>
+
+    Input:
+
+    <input type="text" name="username" id="" placeholder="Username">
+
+    <form>
+        <input type="radio" name='gender' value='male' checked>Male
+        <input type="radio" name='gender' value='female'>Female
+    </form>
+
+
+    Submit:
+
+        <button type="submit"></button>
+
+
+
+
+    Fieldset:
+        Group sets of related inputs together
+        Legend tag: appropriate title to the domain.
+
+
+    Server Side Handling:
+
+        Superglobal Variables: allow access from any point in the PHP
+
+        $_GET and $_POST
+
+        Key value pairs
+
+        $_POST["name"];
+
+
+    Select:
+
+        Drop-Down Selection box.
+        Contained within one box.
+
+        allows multiple items to be selected
+
+        <select name="cars" size=3 multiple>
+            <option value="one">One</option>
+            <option value="two">Two</option>
+            <option value="three">Three</option>
+        </select>
+
+    Text Area:
+        Similar to a text field, but larger.
+        Defined in size by rows and columns
+            Number of chars that can fit into the field
+
+        
+    Data List
+        Applicable to text entry areas
+        Basic autocomplete
+
+        Useful when a subset of expected values is present, but we don't want to restrict user choices.
+
+    
+    Other Input Types:
+
+        Password:
+            Not encrypted, but obscured by *s
+
+        Reset:
+            Clear the contents of a form.
+
+        Color:
+            <input type="color">
+
+        Date:
+            <input type="date">
+
+        Number:
+            <input type="number" min="-200" max="200">
+
+        Other attributes:
+            Disabled, required, formmethod, etc.
+
+        Output field:
+
+        Used to store basic data output.
+        Commonly used with numbers
+
+            Oninput / onchange
+
+
+    
+    PHP Can execute itself after a form submit:
+        $_SERVER["PHP_SELF"]
+
+        Validation using regex
+
+        htmlspecialchars($data)
+
+        converts special chars to 'text'
+
+        trim() = removed whitespace, tabs, newline
+
+        and stripslashes() = removed back and forward slashes
+
+
+    Regex:
+        concatenation, alternation, and closure
+
+        * = closure (0 or more of a sign)
+        + = 1 or more
+
+        preg_match(regex, $var)
+
+        emails have built in filtering
+        
