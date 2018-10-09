@@ -1,0 +1,27 @@
+preg_match($regex, $string, $match);
+    $match has locations of matches in the string.
+
+    [[match, location]]
+
+    Useful for finding where substrings are.
+    Only returns the first match
+        pref_match_all() finds all matches.
+    
+preg_replace($pattern, $replacement, $string)
+
+
+PREG_OFFSET_CAPTURE
+
+Text does not change. Returns a new string.
+
+Arrays in PHP are dumb and don't sort on their own.
+
+use ksort on the array to have it actually make any sense.
+
+Usually start and end with a /
+Need to escape things like '*', ',' etc.
+* 0 or more
++ one or more
+{x} exactly x many
+
+
