@@ -20,11 +20,11 @@ for __Meal__.
 
 Forgive me
 
-they were __Adjective__
+they were __Adjective-1__
 
-so __Adjective__
+so __Adjective-2__
 
-and so __Adjective__.
+and so __Adjective-3__.
 
 
 Original Poem: THIS IS JUST TO SAY by William Carlos Williams
