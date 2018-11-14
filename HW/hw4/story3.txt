@@ -1,18 +1,18 @@
-Some say the world will end in __Noun__,
+Some say the world will end in --Noun--,
 
-Some say in __Noun__.
+Some say in --Noun--.
 
-From what I’ve tasted of __Emotion__
+From what I’ve tasted of --Emotion--
 
-I hold with those who favor __Noun__.
+I hold with those who favor --Noun--.
 
-But if it had to __Verb__ twice,
+But if it had to --Verb-- twice,
 
-I think I know enough of __Emotion__
+I think I know enough of --Emotion--
 
-To say that for destruction __Noun__
+To say that for destruction --Noun--
 
-Is also __Adjective__
+Is also --Adjective--
 
 And would suffice.
 

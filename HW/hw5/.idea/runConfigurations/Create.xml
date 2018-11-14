@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Create" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="Create" start_url="/web_programming/hw/hw5">
+    <method v="2">
+      <option name="FtpUpload" enabled="true">
+        <server_id>ae729e5a-9704-4951-b805-fb8817f43513</server_id>
+        <server_name>Create</server_name>
+        <path>$PROJECT_DIR$</path>
+      </option>
+    </method>
+  </configuration>
+</component>

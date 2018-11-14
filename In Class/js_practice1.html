@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body id='body'>
+    <h1 id="heading1">This text should have its color changed!</h1>
+    <script>
+
+      setInterval(()=>{
+        document.getElementById('body').style.backgroundColor = "#" + Math.random().toString(16).slice(2, 8);
+      }, 5);
+
+      setInterval(()=>{
+        document.getElementById('body').style.color = "#" + Math.random().toString(16).slice(2, 8);
+      }, 500)
+    
+      function randomColor(){
+        document.getElementById('heading1').style.color = "#" + Math.random().toString(16).slice(2, 8);
+      }
+
+    </script>
+    <button onclick="randomColor();">Change the Color</button>
+    <p>Below this paragraph tag let's output the date!</p>
+    <p id="date">Replace me!</p>
+    <button onclick="document.getElementById('date').innerHTML = new Date();">Change the Date</button>
+    <p>Below this paragraph let's have a counter going!</p>
+    <p id="count">Replace me!</p>
+    <script>
+      let value = 0;
+      function increment(){
+        value++;
+        document.getElementById('count').innerHTML = value;
+      }
+    </script>
+    <button onclick="increment();">Increment</button>
+    <p>Below this paragraph we shall edit the image and its link. (Hint use a function)</p>
+    <div id='image'><a id="my_link" href="https://en.wikipedia.org/wiki/Computer_science"><img id="my_image" src="https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwMC84NzUvb3JpZ2luYWwvQWRhLUxvdmVsYWNlLmpwZw=="></a></div>
+    <p>Below this tag is a field we will edit in class!</p>
+    <p id="demo">TO BE CHANGED</p>
+    <button type="button" onclick="sample_function()">Class Practice</button>
+    <script>
+      function sample_function()
+      {
+        document.getElementById('demo').innerHTML="Sample text here!";
+        document.getElementById('demo').style.fontSize="35px";
+      }
+
+      let x_pos = 0;
+      let y_pos = 0;
+
+      let image = document.getElementById('image');
+      image.style.position = "absolute";
+      image.style.height = '50%';
+      image.style.width = '50%';
+
+      setInterval(()=>{
+        x_pos = Math.random() * 800;
+        y_pos = Math.random() * 800;
+        
+        image.style.height = Math.random() * 100;
+        image.style.width = Math.random() * 100;
+        image.style.left = x_pos+'px';
+        image.style.top = y_pos+'px';
+      }, 250);
+    </script>
+  </body>
+</html>

@@ -1,5 +1,5 @@
-There once was a man from __Location__.
-Who dreamed he was eating his __Object__.
-He woke with a __Verb__
-In the middle of the __Time__
+There once was a man from --Location--.
+Who dreamed he was eating his --Object--.
+He woke with a --Verb--
+In the middle of the --Time--
 To find that his dream had come true.

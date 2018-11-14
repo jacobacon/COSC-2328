@@ -1,10 +1,10 @@
-I have __Verb__
+I have --Verb--
 
-the __Noun__
+the --Noun--
 
 that were in
 
-the __Location__
+the --Location--
 
  
 
@@ -14,17 +14,17 @@ you were probably
 
 saving
 
-for __Meal__.
+for --Meal--.
 
  
 
 Forgive me
 
-they were __Adjective-1__
+they were --Adjective-1--
 
-so __Adjective-2__
+so --Adjective-2--
 
-and so __Adjective-3__.
+and so --Adjective-3--.
 
 
 Original Poem: THIS IS JUST TO SAY by William Carlos Williams
