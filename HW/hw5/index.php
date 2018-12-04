@@ -90,12 +90,11 @@ session_start();
             } else {
                 print_r($errors);
             }
+            //Set the category in the filter
+            $category_filter = $_GET['category'];
+
+            echo returnBody($category_filter);
         }
-
-        //Set the category in the filter
-        $category_filter = $_GET['category'];
-
-        echo returnBody($category_filter);
     }
     ?>
 </div>
@@ -139,6 +138,7 @@ function returnBody($category)
     $returnString .= '<h5 class="card-header">Images</h5>';
     $returnString .= '<div class="card-body">';
     $returnString .= generateTable($category);
+    $returnString .= '<button type="button" class="btn btn-sm btn-danger mt-3" id="delete-btn">Delete Selected</button>';
     $returnString .= '</div>';
     $returnString .= '</div>';
     $returnString .= '<div class="card mt-3">';
@@ -244,12 +244,12 @@ function generateTable($category)
     $result = $conn->query($sql);
 
     //Generate a table based on the SQL data
-    $returnString = '<table style="width: 100%"><thead><th>Link</th><th>Description</th><th>Category</th></thead><tbody>';
+    $returnString = '<table style="width: 100%" id="image-table"><thead><th></th><th>Link</th><th>Description</th><th>Category</th></thead><tbody>';
 
     if ($result->num_rows > 0) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
-            $returnString .= '<tr><td><a target="_blank" href="' . $row['url'] . '">' . $row['url'] . '</a></td><td>' . $row['description'] . '</td><td>' . $row['category'] . '</td></tr>';
+            $returnString .= '<tr><td><input type="checkbox" name="selected" value="' . $row['url']. '"></td><td><a target="_blank" href="' . $row['url'] . '">' . $row['url'] . '</a></td><td>' . $row['description'] . '</td><td>' . $row['category'] . '</td></tr>';
         }
         $conn->close();
     }
@@ -282,6 +282,23 @@ function generateTable($category)
             break;
 
     }
+
+    $(document).ready(()=>{
+       $('#delete-btn').click(function (){
+          let deleteValues = [];
+
+          $('#image-table input:checked').each(function () {
+              deleteValues.push($(this).val());
+          });
+
+          $.post(window.location.pathname + '/delete.php', {'delete': deleteValues}).done(function (data) {
+              alert('Deleted Image');
+              window.location.replace(window.location.pathname);
+          });
+
+       });
+    });
+
 </script>
 </body>
 </html>

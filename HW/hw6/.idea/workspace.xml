@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2ae9b68-874c-4792-9951-267430df12bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../hw5/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hw5/logout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw4.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw4/hw4.php" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/hw4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw4/story1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/story1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw4/story2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/story2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw4/story3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/story3.txt" afterDir="false" />
-    </list>
+    <list default="true" id="e2ae9b68-874c-4792-9951-267430df12bc" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -89,7 +79,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="797" />
@@ -142,15 +132,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1542217074281</updated>
-      <workItem from="1542217075481" duration="3311000" />
+      <workItem from="1542217075481" duration="4104000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3311000" />
+    <option name="totallyTimeSpent" value="4104000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="797" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="797" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />

@@ -12,70 +12,179 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="public/app.css">
+
     <title>HW6</title>
 </head>
 <body>
     <div class="container pt-3">
-        <input type="text" placeholder="Put a List of Numbers Here" class="form-control" id="numbers-input">
-        <button type="button" class="btn btn-primary" id="analyze-btn">Analyze</button>
+        <div class="row">
+        <div class="col-6">
+            <div class="input-group">
+                <input type="number" placeholder="Input Number Here" class="form-control" id="number-input" required>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary" type="button" id="add-number-btn">Add Number</button>
+                </div>
+                </div>
+                <button type="button" class="btn btn-primary mt-3" id="analyze-number-btn">Analyze Numbers</button>
 
-        <ul id="numbers-list">
-        </ul>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <label for="numbers-list">
+                            Numbers
+                        </label>
+                        <ul id="numbers-list">
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                            <table id="number-table" style="width: 100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Min</th>
+                                            <th>Max</th>
+                                            <th>Average</th>
+                                            <th>Median</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                    </div>
+                </div>
+        </div>
+        <div class="col-6">
+            <div class="input-group">
+                <input type="text" placeholder="Input String Here" class="form-control" id="string-input" required>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary" type="button" id="add-string-btn">Add String</button>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary mt-3" id="analyze-string-btn">Analyze Strings</button>
 
-        <table id="number-table">
-            <thead>
-                <tr>
-                    <th>Min</th>
-                    <th>Max</th>
-                    <th>Average</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <label for="string-list">Strings</label>
+                    <ul id="string-list">
+                    </ul>
+                </div>
+            
+                <div class="col-6">
+                    <table id="string-table" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th>Shortest</th>
+                                <th>Longest</th>
+                                <th>Include 'A'</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 
     </div>
 </body>
 
 <script>
+    let numbers = [];
+    let strings = [];
+
     $(()=>{
-        $('#analyze-btn').click(()=>{
-            let numbers = $('#numbers-input').val().split(" ").map(Number);
+        $('#number-input').keydown((e)=>{
+            if(e.keyCode === 13){
+                $('#add-number-btn').trigger('click');
+            }
+        });
 
-            numbers.forEach((number)=>{
-                $('#numbers-list').append('<li>' + number + '</li>');
-            });
+        $('#string-input').keydown((e)=>{
+            if(e.keyCode === 13){
+                $('#add-string-btn').trigger('click');
+            }
+        });
 
+        $('#add-number-btn').click(()=>{
+            let number = Number($('#number-input').val());
+            numbers.push(number);
+            $('#numbers-list').append(`<li> ${ number } </li>`);
+            $('input').val("");
+        });
 
+        $('#analyze-number-btn').click(()=>{
+            console.log(numbers);
             analyzeNumbers(numbers);
         });
 
+        $('#add-string-btn').click(()=>{
+            let string = $('#string-input').val();
+            strings.push(string);
+            $('#string-list').append(`<li> ${ string } </li>`);
+            $('input').val("");
+        });
 
+        $('#analyze-string-btn').click(()=>{
+            analyzeStrings(strings);
+        });
 
         function analyzeNumbers(numbers) {
 
-            let min = Math.min(numbers);
-            let max = Math.min(numbers);
+            let min = Math.min(...numbers);
+            let max = Math.max(...numbers);
             let sum = numbers.reduce((total, num)=>{
                 return total + num;
             });
 
             let avg = sum / numbers.length;
 
+            let values = numbers.sort((a,b)=>{
+                return a-b;
+            });
+
+            if(values.length ===0) return 0;
+
+            var half = Math.floor(values.length / 2);
+
+            let median;
+
+            if (values.length % 2)
+                median = values[half];
+            else
+                median = (values[half - 1] + values[half]) / 2.0;
+
             let table = $('#number-table tbody');
 
-            table.append('<tr><td>' + min + '</td><td>' + max + '</td><td>' + avg + '</td></tr>');
-
-            alert(avg);
+            table.html("");
+            table.append(`<tr><td>${min}</td><td>${max}</td><td>${avg}</td><td>${median}</td></tr>`);
         }
 
+        function analyzeStrings() {
+            //Find shortest in array by sorting smallest to biggest.
+            let shortest_first = strings.sort((a,b)=>{
+                return a.length - b.length;
+            });
 
+            let shortest = shortest_first[0];
 
+            let longest_first = strings.sort((a,b)=>{
+                return b.length - a.length;
+            });
 
+            let longest = longest_first[0];
 
-
-
-
+            let a_strings = strings.map(val =>{
+                if(val.includes('a') || val.includes('A')){
+                    return val;
+                }
+            }).filter((val)=>{
+                return val != null;
+            });
+            
+            $('#string-table tbody').html("");
+            $('#string-table tbody').append(`<tr><td>${shortest}</td><td>${longest}</td><td>${a_strings}</td></tr>`);
+        }
     });
 
 

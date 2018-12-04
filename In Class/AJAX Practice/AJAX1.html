@@ -1,0 +1,61 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>HTML</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div>
+                <div id="div1">
+                </div>
+                <button id="load-btn" class="btn btn-primary">Load From Text File</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+            <p id=p1>This is where the average will go!</p>
+            <button class="btn btn-primary" id="avg-btn">Click Me!</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+            <form id="register-form">
+                <input type="text" class="form-control" id="name" placeholder="Name" name="name" required>
+                <input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
+                <input type="text" class="form-control" id="email" placeholder="Email" name="email" required>
+                <button class="brn btn-primary" id="register-btn" type="button">Register</button>
+            </form>
+            <p id="p2"></p>
+        </div>
+    </body>
+
+<p id="paragraph"></p>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+        $('#load-btn').click(()=>{
+            $('#div1').load('http://jbeneski.create.stedwards.edu/web_programming/in_class/text.txt');
+        });
+
+        $('#avg-btn').click(()=>{
+            $.get('http://jbeneski.create.stedwards.edu/web_programming/in_class/avg.php', (data)=>{
+                $('#p1').append(`<br> ${data}`);
+            });
+        });
+
+        $('#register-btn').click(()=>{
+            $.post( "http://jbeneski.create.stedwards.edu/web_programming/in_class/register.php", $('#register-form').serialize())
+            .done(function( data ) {
+                $('#p2').html(data);
+            });
+        });
+</script>
+</html>

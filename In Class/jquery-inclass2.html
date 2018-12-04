@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <input id="randomInput" type="text">
+
+        <button onclick="addInput()">Add to Paragraph</button>
+
+        <p id='paragraphField'></p>
+    </body>
+
+    <script>
+        $('#randomInput').focus(()=>{
+            $('#randomInput').css('background-color', 'orange');
+        });
+
+        $('#randomInput').blur(()=>{
+            $('#randomInput').css('background-color', 'initial');
+        });
+
+        function addInput(){
+            $('#paragraphField').append($('#randomInput').val());
+        }
+
+
+    
+    </script>
+</html>
